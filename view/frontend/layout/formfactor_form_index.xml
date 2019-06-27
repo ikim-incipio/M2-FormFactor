@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © 2018 Incipio
+ * 2018-08 Isaac Kim
+ */
+-->
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" layout="1column" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+	<head>
+		<script src="Incipio_FormFactor::js/formfactor.js" defer="defer"/>
+	</head>
+    <body>
+        <referenceContainer name="content">
+            <block class="Incipio\FormFactor\Block\FormFactor" name="incipio_formfactor_form" as="formfactor_form"  template="form_factor.phtml"/>
+        </referenceContainer>
+    </body>
+</page>

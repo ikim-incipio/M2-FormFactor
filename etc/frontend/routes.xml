@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © 2018 Incipio
+ * 2018-08 Isaac Kim
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:App/etc/routes.xsd">
+    <router id="standard">
+        <route id="formfactor" frontName="formfactor">
+            <module name="Incipio_FormFactor" />
+        </route>
+    </router>
+</config>

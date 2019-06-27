@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © 2018 Incipio
+ * 2018-08 Isaac Kim
+ */
+-->
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" layout="admin-2columns-left" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <head>
+        <css src="css/styles.css" load_last="true" />
+    </head>
+    <body>
+        <referenceContainer name="left">
+            <block class="Incipio\FormFactor\Block\Adminhtml\FormFactors\Edit\Tabs" name="incipio_formfactor_formfactors_edit_tabs">
+                <block class="Incipio\FormFactor\Block\Adminhtml\FormFactors\Edit\Tab\Main" name="incipio_formfactor_formfactors_edit_tab_main"/>
+                <action method="addTab">
+                    <argument name="name" xsi:type="string">main_section</argument>
+                    <argument name="block" xsi:type="string">incipio_formfactor_formfactors_edit_tab_main</argument>
+                </action>
+            </block>
+        </referenceContainer>
+        <referenceContainer name="content">
+            <block class="Incipio\FormFactor\Block\Adminhtml\FormFactors\Edit" name="formfactor_formfactors_edit">
+                <block class="Incipio\FormFactor\Block\Adminhtml\FormFactors\Edit\Form" name="formfactor_formfactors_form" as="form"/>
+            </block>
+        </referenceContainer>
+    </body>
+</page>

@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © 2018 Incipio
+ * 2018-08 Isaac Kim
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+    <menu>
+        <add id="Incipio_FormFactor::form_factor" title="Form Factor" module="Incipio_FormFactor" sortOrder="80" parent="Incipio_Design::design" action="incipio_formfactor/formfactors/" resource="Incipio_FormFactor::form_factor"/>
+    </menu>
+</config>

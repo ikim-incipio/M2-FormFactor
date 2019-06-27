@@ -1,0 +1,92 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © 2018 Incipio
+ * 2018-08 Isaac Kim
+ */
+-->
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <body>
+        <referenceContainer name="content">
+        	<block class="Incipio\FormFactor\Block\Adminhtml\FormFactors" name="incipio_formfactors">
+                <block class="Magento\Backend\Block\Widget\Grid" name="incipio_formfactors_grid" as="grid">
+                    <arguments>
+                        <argument name="id" xsi:type="string">incipio_formfactors_grid</argument>
+                        <argument name="dataSource" xsi:type="object">Incipio\FormFactor\Model\ResourceModel\FormFactors\Collection</argument>
+                        <argument name="default_sort" xsi:type="string">sort_order</argument>
+                        <argument name="default_dir" xsi:type="string">ASC</argument>
+                        <argument name="save_parameters_in_session" xsi:type="string">1</argument>
+                    </arguments>
+                    <block class="Magento\Backend\Block\Widget\Grid\Massaction" name="incipio_formfactors_grid_massaction" as="grid.massaction">
+                        <arguments>
+                            <argument name="massaction_id_field" xsi:type="string">formfactor_id</argument>
+                            <argument name="form_field_name" xsi:type="string">formfactor_ids</argument>
+                            <argument name="use_select_all" xsi:type="string">1</argument>
+                            <argument name="options" xsi:type="array">
+                               <item name="mass_delete" xsi:type="array">
+                                    <item name="formfactor" xsi:type="string" translate="true">Delete</item>
+                                    <item name="url" xsi:type="string">*/*/massDelete</item>
+                                   <item name="confirm" xsi:type="string" translate="true">Are you sure you want to delete the selected form factors?</item>
+                               </item>
+
+                                <item name="enable" xsi:type="array">
+                                    <item name="formfactor" xsi:type="string" translate="true">Enable</item>
+                                    <item name="url" xsi:type="string">*/*/massEnable</item>
+                                </item>
+                                <item name="disable" xsi:type="array">
+                                    <item name="formfactor" xsi:type="string" translate="true">Disable</item>
+                                    <item name="url" xsi:type="string">*/*/massDisable</item>
+                                </item>
+
+                            </argument>
+                        </arguments>
+                    </block>
+                    <block class="Magento\Backend\Block\Widget\Grid\ColumnSet" as="grid.columnSet" name="incipio_formfactors_labelscolumnSet">
+                        <arguments>
+                            <argument name="rowUrl" xsi:type="array">
+                                <item name="path" xsi:type="string">incipio_formfactor/*/edit</item>
+                                <item name="extraParamsTemplate" xsi:type="array">
+                                    <item name="id" xsi:type="string">getId</item>
+                                </item>
+                            </argument>
+                        </arguments>
+                        <block class="Magento\Backend\Block\Widget\Grid\Column" as="id">
+                            <arguments>
+                                <argument name="header" xsi:type="string" translate="true">FormFactor ID</argument>
+                                <argument name="index" xsi:type="string">formfactor_id</argument>
+                                <argument name="column_css_class" xsi:type="string">col-id</argument>
+                                <argument name="header_css_class" xsi:type="string">col-id</argument>
+                                <argument name="width" xsi:type="string">50</argument>
+                            </arguments>
+                        </block>
+                        <block class="Magento\Backend\Block\Widget\Grid\Column" as="code">
+                            <arguments>
+                                <argument name="header" xsi:type="string" translate="true">Code</argument>
+                                <argument name="index" xsi:type="string">code</argument>
+                            </arguments>
+                        </block>
+                        <block class="Magento\Backend\Block\Widget\Grid\Column" as="name">
+                            <arguments>
+                                <argument name="header" xsi:type="string" translate="true">Name</argument>
+                                <argument name="index" xsi:type="string">name</argument>
+                            </arguments>
+                        </block>
+                        <!-- <block class="Magento\Backend\Block\Widget\Grid\Column" as="status">
+                            <arguments>
+                                <argument name="header" xsi:type="string" translate="true">Status</argument>
+                                <argument name="index" xsi:type="string">status</argument>
+                                <argument name="renderer" xsi:type="string">Incipio\FormFactor\Block\Adminhtml\FormFactors\Renderer\Status</argument>
+                            </arguments>
+                        </block> -->
+                        <block class="Magento\Backend\Block\Widget\Grid\Column" as="hero_title">
+                            <arguments>
+                                <argument name="header" xsi:type="string" translate="true">Hero Title</argument>
+                                <argument name="index" xsi:type="string">hero_title</argument>
+                            </arguments>
+                        </block>
+                    </block>
+                </block>
+            </block>
+        </referenceContainer>
+    </body>
+</page>
